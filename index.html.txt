@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ARMAN | @stringsbyarman</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Outfit:wght@100;300;400;600&family=Cormorant+Garamond:ital,wght@1,300;1,500&display=swap');
+
+        :root {
+            --obsidian: #050505;
+            --gold-leaf: #b89c6d;
+            --soft-white: #f5f5f5;
+        }
+
+        body {
+            background-color: var(--obsidian);
+            color: var(--soft-white);
+            font-family: 'Outfit', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .font-sync { font-family: 'Syncopate', sans-serif; }
+        .font-serif { font-family: 'Cormorant Garamond', serif; }
+
+        /* Immersive Hero Header */
+        .hero-wrap {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: url('90940.webp') center/cover no-repeat;
+            filter: grayscale(0.4) brightness(0.3);
+            transform: scale(1.1);
+            transition: transform 2s ease-out;
+            z-index: -1;
+        }
+
+        .hero-wrap:hover .hero-bg {
+            transform: scale(1);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to bottom, transparent 60%, var(--obsidian));
+            z-index: 0;
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s ease;
+        }
+
+        .glass-card:hover {
+            border-color: var(--gold-leaf);
+            background: rgba(184, 156, 109, 0.03);
+        }
+
+        .contact-pill {
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .contact-pill:hover {
+            background: var(--gold-leaf);
+            color: black;
+            transform: scale(1.05);
+        }
+
+        .marquee-track {
+            white-space: nowrap;
+            display: flex;
+            gap: 4rem;
+            animation: scroll 30s linear infinite;
+        }
+
+        @keyframes scroll {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+    </style>
+</head>
+<body class="selection:bg-[#b89c6d] selection:text-black">
+
+    <!-- Navigation -->
+    <nav class="fixed top-0 left-0 w-full z-[100] px-8 py-8 flex justify-between items-center mix-blend-difference">
+        <div class="font-sync font-bold text-[10px] tracking-[0.6em] text-white">
+            STRINGS BY ARMAN
+        </div>
+        <div class="hidden md:flex items-center space-x-8 text-[10px] tracking-[0.3em] font-bold">
+            <a href="https://instagram.com/stringsbyarman" target="_blank" class="text-[#b89c6d]">@STRINGSBYARMAN</a>
+            <a href="#sessions" class="hover:text-[#b89c6d] transition-colors">SESSIONS</a>
+            <a href="#connect" class="hover:text-[#b89c6d] transition-colors">CONNECT</a>
+        </div>
+    </nav>
+
+    <!-- Immersive Hero -->
+    <header class="hero-wrap">
+        <div class="hero-bg"></div>
+        <div class="hero-overlay"></div>
+        
+        <div class="relative z-10 text-center px-6">
+            <span class="block text-[10px] tracking-[1em] text-[#b89c6d] font-bold mb-8 uppercase animate-pulse">
+                Professional Session Artist
+            </span>
+            <h1 class="text-7xl md:text-[12vw] font-sync font-bold leading-none tracking-tighter mb-12">
+                ARMAN
+            </h1>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+                <a href="#connect" class="contact-pill text-[10px] font-bold tracking-[0.4em] uppercase">Book a Session</a>
+                <div class="hidden md:block w-12 h-[1px] bg-white/20"></div>
+                <a href="https://instagram.com/stringsbyarman" target="_blank" class="font-serif italic text-2xl opacity-60 hover:text-[#b89c6d] transition-colors">@stringsbyarman</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Gear Marquee -->
+    <div class="py-12 border-y border-white/5 bg-black overflow-hidden">
+        <div class="marquee-track font-sync text-2xl opacity-10 font-bold uppercase">
+            <span>Epiphone 1960 Tribute Plus</span>
+            <span>Strydom Dune Transacoustic</span>
+            <span>Boss GX-100</span>
+            <span>Focusrite 4i4</span>
+            <span>Logic Pro X</span>
+            <span>Remote Stems</span>
+            <span>@stringsbyarman</span>
+            <!-- Duplicate for infinite loop -->
+            <span>Epiphone 1960 Tribute Plus</span>
+            <span>Strydom Dune Transacoustic</span>
+            <span>Boss GX-100</span>
+            <span>Focusrite 4i4</span>
+            <span>Logic Pro X</span>
+            <span>Remote Stems</span>
+            <span>@stringsbyarman</span>
+        </div>
+    </div>
+
+    <!-- The Services -->
+    <section id="sessions" class="py-32 px-8 md:px-24">
+        <div class="max-w-7xl mx-auto grid md:grid-cols-3 gap-8">
+            <div class="glass-card p-12">
+                <div class="text-[#b89c6d] text-xs font-bold mb-8 tracking-[0.3em]">01 / LEAD</div>
+                <h3 class="text-3xl font-serif italic mb-6">Electric Soloist</h3>
+                <p class="text-neutral-500 text-sm leading-relaxed mb-8">
+                    High-definition lead phrasing recorded via the 1960 Tribute Plus (Gibson '57 Classics). 
+                </p>
+                <div class="text-[9px] uppercase tracking-widest opacity-40">DI + Processed Tracks</div>
+            </div>
+            
+            <div class="glass-card p-12">
+                <div class="text-[#b89c6d] text-xs font-bold mb-8 tracking-[0.3em]">02 / ACOUSTIC</div>
+                <h3 class="text-3xl font-serif italic mb-6">Fingerstyle</h3>
+                <p class="text-neutral-500 text-sm leading-relaxed mb-8">
+                    Textural arrangements using the Strydom Dune for natural reverberation and air.
+                </p>
+                <div class="text-[9px] uppercase tracking-widest opacity-40">Stereo High-Def Capture</div>
+            </div>
+
+            <div class="glass-card p-12">
+                <div class="text-[#b89c6d] text-xs font-bold mb-8 tracking-[0.3em]">03 / RYHTHM</div>
+                <h3 class="text-3xl font-serif italic mb-6">Sound Architect</h3>
+                <p class="text-neutral-500 text-sm leading-relaxed mb-8">
+                    Dynamic rhythmic layers and ambient fills designed to glue your production together.
+                </p>
+                <div class="text-[9px] uppercase tracking-widest opacity-40">Mix-Ready Stems</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect -->
+    <section id="connect" class="py-40 px-8 md:px-24">
+        <div class="max-w-6xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-20 items-end">
+                <div>
+                    <h2 class="text-[10px] tracking-[0.5em] text-[#b89c6d] font-bold mb-10 uppercase">Secure Your Take</h2>
+                    <h3 class="text-5xl md:text-7xl font-sync font-bold leading-none tracking-tighter mb-12">LET'S <br>RECORD.</h3>
+                </div>
+                
+                <div class="space-y-12 pb-4">
+                    <div class="group">
+                        <span class="block text-[10px] uppercase tracking-widest opacity-40 mb-3">Follow on Instagram</span>
+                        <a href="https://instagram.com/stringsbyarman" target="_blank" class="text-2xl md:text-3xl font-sync font-bold text-[#b89c6d] hover:text-white transition-colors">
+                            @STRINGSBYARMAN
+                        </a>
+                    </div>
+
+                    <div class="group">
+                        <span class="block text-[10px] uppercase tracking-widest opacity-40 mb-3">Professional Email</span>
+                        <a href="mailto:stringsbyarman@gmail.com" class="text-2xl md:text-3xl font-sync font-bold hover:text-[#b89c6d] transition-colors break-all">
+                            STRINGSBYARMAN@GMAIL.COM
+                        </a>
+                    </div>
+                    
+                    <div class="group">
+                        <span class="block text-[10px] uppercase tracking-widest opacity-40 mb-3">Direct / Whatsapp</span>
+                        <a href="tel:+918669660799" class="text-3xl md:text-4xl font-sync font-bold hover:text-[#b89c6d] transition-colors">
+                            +91 86696 60799
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 px-8 md:px-24 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div class="font-sync text-[8px] tracking-[0.6em] opacity-30">© 2026 ARMAN SHIKALGAR</div>
+        <div class="font-sync text-[8px] tracking-[0.6em] opacity-30 uppercase italic">Digital Nomad • @stringsbyarman</div>
+    </footer>
+
+</body>
+</html>

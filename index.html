@@ -25,7 +25,6 @@
         .font-sync { font-family: 'Syncopate', sans-serif; }
         .font-serif { font-family: 'Cormorant Garamond', serif; }
 
-        /* Immersive Hero Header */
         .hero-wrap {
             height: 100vh;
             position: relative;
@@ -93,6 +92,107 @@
             from { transform: translateX(0); }
             to { transform: translateX(-50%); }
         }
+
+        /* Instagram Section */
+        .reel-thumb {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 9/16;
+            background: #111;
+            cursor: pointer;
+        }
+
+        .reel-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            transition: transform 0.6s ease;
+            filter: brightness(0.85);
+        }
+
+        .reel-thumb:hover img {
+            transform: scale(1.05);
+            filter: brightness(0.6);
+        }
+
+        .reel-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .reel-play-icon {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) scale(0.8);
+            opacity: 0;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 2.5rem;
+            filter: drop-shadow(0 2px 8px rgba(0,0,0,0.6));
+        }
+
+        .reel-thumb:hover .reel-play-icon {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1);
+        }
+
+        .reel-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(0,0,0,0.5);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 4px 10px;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 8px;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.7);
+            width: fit-content;
+        }
+
+        .reel-label {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.2em;
+            color: rgba(255,255,255,0.5);
+            text-transform: uppercase;
+        }
+
+        .ig-follow-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(184, 156, 109, 0.4);
+            padding: 14px 32px;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 9px;
+            letter-spacing: 0.3em;
+            color: var(--gold-leaf);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+        }
+
+        .ig-follow-btn:hover {
+            background: var(--gold-leaf);
+            color: black;
+            border-color: var(--gold-leaf);
+        }
+
+        .ig-divider {
+            width: 1px;
+            height: 60px;
+            background: linear-gradient(to bottom, transparent, rgba(184,156,109,0.3), transparent);
+        }
     </style>
 </head>
 <body class="selection:bg-[#b89c6d] selection:text-black">
@@ -105,6 +205,7 @@
         <div class="hidden md:flex items-center space-x-8 text-[10px] tracking-[0.3em] font-bold">
             <a href="https://instagram.com/stringsbyarman_" target="_blank" class="text-[#b89c6d]">@STRINGSBYARMAN</a>
             <a href="#sessions" class="hover:text-[#b89c6d] transition-colors">SESSIONS</a>
+            <a href="#reels" class="hover:text-[#b89c6d] transition-colors">REELS</a>
             <a href="#connect" class="hover:text-[#b89c6d] transition-colors">CONNECT</a>
         </div>
     </nav>
@@ -133,15 +234,14 @@
     <div class="py-12 border-y border-white/5 bg-black overflow-hidden">
         <div class="marquee-track font-sync text-2xl opacity-10 font-bold uppercase">
             <span>Epiphone 1960 Tribute Plus</span>
-            <span>Strydom Dune Transacoustic</span>
+            <span>Strymon Dune Transacoustic</span>
             <span>Boss GX-100</span>
             <span>Focusrite 4i4</span>
             <span>Logic Pro X</span>
             <span>Remote Stems</span>
             <span>@stringsbyarman</span>
-            <!-- Duplicate for infinite loop -->
             <span>Epiphone 1960 Tribute Plus</span>
-            <span>Strydom Dune Transacoustic</span>
+            <span>Strymon Dune Transacoustic</span>
             <span>Boss GX-100</span>
             <span>Focusrite 4i4</span>
             <span>Logic Pro X</span>
@@ -166,19 +266,81 @@
                 <div class="text-[#b89c6d] text-xs font-bold mb-8 tracking-[0.3em]">02 / ACOUSTIC</div>
                 <h3 class="text-3xl font-serif italic mb-6">Fingerstyle</h3>
                 <p class="text-neutral-500 text-sm leading-relaxed mb-8">
-                    Textural arrangements using the Strydom Dune for natural reverberation and air.
+                    Textural arrangements using the Strymon Dune for natural reverberation and air.
                 </p>
                 <div class="text-[9px] uppercase tracking-widest opacity-40">Stereo High-Def Capture</div>
             </div>
 
             <div class="glass-card p-12">
-                <div class="text-[#b89c6d] text-xs font-bold mb-8 tracking-[0.3em]">03 / RYHTHM</div>
+                <div class="text-[#b89c6d] text-xs font-bold mb-8 tracking-[0.3em]">03 / RHYTHM</div>
                 <h3 class="text-3xl font-serif italic mb-6">Sound Architect</h3>
                 <p class="text-neutral-500 text-sm leading-relaxed mb-8">
                     Dynamic rhythmic layers and ambient fills designed to glue your production together.
                 </p>
                 <div class="text-[9px] uppercase tracking-widest opacity-40">Mix-Ready Stems</div>
             </div>
+        </div>
+    </section>
+
+    <!-- ── INSTAGRAM REELS SECTION ── -->
+    <section id="reels" class="py-32 px-8 md:px-24 border-t border-white/5">
+        <div class="max-w-7xl mx-auto">
+
+            <!-- Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
+                <div>
+                    <div class="text-[10px] tracking-[0.5em] text-[#b89c6d] font-bold font-sync mb-4 uppercase">Latest Reels</div>
+                    <h2 class="text-4xl md:text-6xl font-sync font-bold leading-none tracking-tighter">
+                        WATCH<br><span class="text-[#b89c6d]">THE WORK.</span>
+                    </h2>
+                </div>
+                <a href="https://instagram.com/stringsbyarman_" target="_blank" class="ig-follow-btn self-start md:self-auto">
+                    <i class="fab fa-instagram text-base"></i>
+                    Follow @stringsbyarman_
+                </a>
+            </div>
+
+            <!-- Reels Grid -->
+            <div class="grid grid-cols-2 gap-4 md:gap-6 max-w-xl mx-auto md:max-w-none md:grid-cols-2 lg:grid-cols-2" style="max-width:640px;">
+
+                <!-- Reel 1 — Live Stage -->
+                <a href="https://www.instagram.com/reel/DWcal2BAB1g/" target="_blank" class="reel-thumb">
+                    <img src="105224.jpg" alt="Live stage performance" />
+                    <div class="reel-overlay">
+                        <div class="reel-badge">
+                            <i class="fab fa-instagram text-[8px]"></i>
+                            REEL
+                        </div>
+                        <div class="reel-label">Live Stage</div>
+                    </div>
+                    <div class="reel-play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </a>
+
+                <!-- Reel 2 — Fingerstyle -->
+                <a href="https://www.instagram.com/reel/DWcfn92gJw4/" target="_blank" class="reel-thumb">
+                    <img src="105219.jpg" alt="Fingerstyle acoustic guitar" />
+                    <div class="reel-overlay">
+                        <div class="reel-badge">
+                            <i class="fab fa-instagram text-[8px]"></i>
+                            REEL
+                        </div>
+                        <div class="reel-label">Fingerstyle</div>
+                    </div>
+                    <div class="reel-play-icon">
+                        <i class="fas fa-play"></i>
+                    </div>
+                </a>
+
+            </div>
+
+            <!-- More coming -->
+            <div class="mt-12 flex items-center gap-6">
+                <div class="ig-divider"></div>
+                <p class="text-[10px] tracking-[0.3em] text-neutral-600 font-sync uppercase">More reels dropping soon</p>
+            </div>
+
         </div>
     </section>
 
